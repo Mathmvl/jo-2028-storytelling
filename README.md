@@ -15,4 +15,4 @@ Ce projet a été réalisé dans le cadre de l'UF "Spécialité IA & Data" (Ynov
 Explications à venir sur comment lancer l'application Streamlit/Dash
 
 ## 📊 Données
-Les données proviennent de Kaggle dans un dataset opensource.
+Les données proviennent de Kagel dans un dataset opensource.
