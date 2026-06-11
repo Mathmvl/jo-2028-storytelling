@@ -254,6 +254,13 @@ if df is not None:
         
         # Distribution des probabilités
         st.subheader("Distribution des probabilités")
+
+        # px.histogram: construit un histogramme (distribution) de la variable continue
+        # jo28_medal_proba.
+        # - x: colonne a distribuer
+        # - nbins: nombre de classes (granularite de lecture)
+        # - color_discrete_sequence: palette appliquee a la serie unique
+        # - labels: renommage des libelles affiches sur les axes/tooltips
         fig = px.histogram(
             filtered_df,
             x="jo28_medal_proba",
@@ -261,8 +268,15 @@ if df is not None:
             color_discrete_sequence=["#032361"],
             labels={"jo28_medal_proba": "Probabilité de médaille"}
         )
+
+        # add_vline: ajoute un repere vertical correspondant au seuil utilisateur.
+        # - line_dash: style de trait pour distinguer la ligne de la distribution
+        # - line_color: couleur du repere
+        # - annotation_text: texte directement affiche pres du repere
         fig.add_vline(x=prob_threshold, line_dash="dash", line_color="red",
                      annotation_text=f"Seuil: {prob_threshold:.0%}")
+
+        # st.plotly_chart: rendu du graphe en largeur adaptative a la zone Streamlit.
         st.plotly_chart(fig, width="stretch")
     
     # ============================
@@ -290,6 +304,14 @@ if df is not None:
         
         # Graphique top 15
         top_15_countries = country_rank.head(15)
+
+        # px.bar: bar chart du score total par pays.
+        # - x: categorie (NOC)
+        # - y: metrique principale (score agrege)
+        # - color: seconde metrique encodee en intensite de couleur
+        # - color_continuous_scale: palette continue pour la metrique color
+        # - labels: habillage lisible des axes et de la legende couleur
+        # - title: titre contextuel du graphique
         fig = px.bar(
             top_15_countries,
             x="NOC",
@@ -299,6 +321,8 @@ if df is not None:
             labels={"NOC": "Pays", "Score_Total": "Score Total", "Proba_Moyenne": "Proba Moyenne"},
             title="Top 15 Pays - Score Total de Médailles (JO28)"
         )
+
+        # Affichage du bar chart classement pays.
         st.plotly_chart(fig, width="stretch")
         
         # Carte géographique (si possible)
@@ -312,12 +336,19 @@ if df is not None:
         country_rank["Continent"] = country_rank["NOC"].map(continent_map).fillna("Autre")
         continent_agg = country_rank.groupby("Continent")["Score_Total"].sum().sort_values(ascending=False)
         
+        # px.pie: part de contribution de chaque continent au score total.
+        # - values: poids de chaque categorie
+        # - names: etiquette des categories
+        # - color_discrete_sequence: palette qualitative pour separer visuellement
+        #   chaque continent
         fig_pie = px.pie(
             values=continent_agg.values,
             names=continent_agg.index,
             title="Distribution des prédictions de médailles par continent",
             color_discrete_sequence=px.colors.qualitative.Set2
         )
+
+        # Affichage du camembert de repartition continentale.
         st.plotly_chart(fig_pie, width="stretch")
     
     # ============================
@@ -342,6 +373,10 @@ if df is not None:
         )
         
         # Graphique
+        # px.bar: visualise le potentiel de medailles (score total) par sport.
+        # - head(20): limite a 20 sports pour conserver la lisibilite
+        # - color="Proba_Moyenne": ajoute une dimension qualitative via la couleur
+        # - color_continuous_scale="Viridis": echelle continue lisible
         fig_sports = px.bar(
             sport_rank.head(20),
             x="Sport",
@@ -351,7 +386,12 @@ if df is not None:
             labels={"Sport": "Sport", "Score_Total": "Score Total"},
             title="Top 20 Sports - Potentiel de Médailles"
         )
+
+        # update_xaxes(tickangle=-45): incline les labels categorie pour eviter le
+        # chevauchement des noms de sport longs.
         fig_sports.update_xaxes(tickangle=-45)
+
+        # Affichage du graphe sports.
         st.plotly_chart(fig_sports, width="stretch")
     
     # ============================
@@ -372,6 +412,11 @@ if df is not None:
             }).reset_index()
             age_dist.columns = ["Age", "Proba_Moyenne", "Nb_Athletes"]
             
+            # px.line: evolution de la probabilite moyenne en fonction de l'age.
+            # - markers=True: ajoute un point sur chaque age pour mieux voir les
+            #   observations discretes
+            # - color_discrete_sequence: couleur unique de la courbe
+            # - labels/title: habillage contextuel
             fig_age = px.line(
                 age_dist,
                 x="Age",
@@ -381,6 +426,8 @@ if df is not None:
                 title="Probabilité de médaille par âge",
                 labels={"Age": "Âge", "Proba_Moyenne": "Proba Moyenne"}
             )
+
+            # Affichage du line chart par age.
             st.plotly_chart(fig_age, width="stretch")
         
         with analysis_col2:
@@ -391,6 +438,10 @@ if df is not None:
             }).reset_index()
             gender_stats.columns = ["Genre", "Proba_Moyenne", "Score_Total", "Nb_Athletes"]
             
+            # px.bar: comparaison des scores agreges par genre.
+            # - y est passe en liste pour rester compatible avec des traces multiples
+            #   si extension future
+            # - color_discrete_sequence: couleur institutionnelle
             fig_gender = px.bar(
                 gender_stats,
                 x="Genre",
@@ -399,6 +450,8 @@ if df is not None:
                 title="Score de prédictions par genre",
                 labels={"Genre": "Genre", "Score_Total": "Score Total"}
             )
+
+            # Affichage du bar chart genre.
             st.plotly_chart(fig_gender, width="stretch")
         
         # Palmarès exceptionnels

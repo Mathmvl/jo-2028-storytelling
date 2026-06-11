@@ -17,7 +17,6 @@ b3-projet-jo-2028/
 ├── data/
 │   ├── data brut/
 │   └── data clean/                                 ← predictions_JO28.csv (sortie)
-└── models/
 ```
 
 ## Démarrage rapide
@@ -99,7 +98,7 @@ S'ouvre sur `localhost:8501`. Tu peux filter par pays, sport, âge, etc.
 
 Filtres: pays, sport, âge, genre, seuil de probabilité.
 
-## Trucs intéressants qu'on a découvert
+## Choses intéressantes qu'on a découvert
 
 - **85% ne médaillent jamais** — C'est brutal. Participer c'est déjà cool mais les médailles c'est rare.
 - **USA domine évidemment** — 3500+ participations médaillées. GBR, FRA loin derrière.
@@ -123,20 +122,3 @@ pandas, numpy, scikit-learn, xgboost, matplotlib, seaborn, streamlit, scipy, jup
 ```bash
 pip install -r requirements.txt
 ```
-
-## Petit guide
-
-**Le notebook est long?** Ouais, 20-30 min. Va prendre un café, une barre de progression s'affiche.
-
-**Où sont les prédictions?** Dans `./data/data clean/predictions_JO28.csv` après que le notebook ait fini.
-
-**Je veux tester d'autres modèles?** Modifie la cellule "Modèle principal" du notebook.
-
-**Ça marche pas?** Vérifie que:
-1. Tu as bien lancé le notebook complet
-2. Tes versions des packages sont à jour (`pip list`)
-3. Les dossiers data/ et models/ existent
-
----
-
-Fait par **Mathéo** & **Imane** | Ynov B3 2026 
