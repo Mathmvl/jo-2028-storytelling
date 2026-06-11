@@ -6,6 +6,13 @@ Application Streamlit pour explorer les données olympiques et prédictions JO 2
 import streamlit as st
 import pandas as pd
 import numpy as np
+import importlib.util
+import subprocess
+import sys
+
+if importlib.util.find_spec("plotly") is None:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly"])
+
 import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
