@@ -3,8 +3,8 @@
 Ce projet a été réalisé dans le cadre de l'UF "Spécialité IA & Data" (Ynov B3).Il s'agit d'une application de data storytelling explorant l'historique des Jeux Olympiques et proposant des prédictions pour l'édition 2028.
 
 ## 👥 Équipe
-* Mathéo Morival 1
-* Imane Guarraz 2
+* Imane Guarraz 
+* Mathéo Morival 
 
 ## 🛠️ Installation
 1. Cloner ce dépôt : `git clone https://github.com/Mathmvl/jo-2028-storytelling.git`
