@@ -2,6 +2,10 @@
 # 🏅 JO 2028 Los Angeles - Data Storytelling & Prédictions
 Dashboard Streamlit — Machine Learning — Data Science
 
+
+Ce projet consiste à analyser les performances des athlètes aux Jeux Olympiques 2024 et à prédire les résultats potentiels des Jeux Olympiques 2028 grâce à un modèle de machine learning. À partir d’un jeu de données historique enrichi, le travail inclut un important pipeline de préparation : nettoyage, normalisation, création de variables, sélection des athlètes récents et dédoublonnage par identifiant unique. Un modèle Random Forest a ensuite été entraîné pour estimer la probabilité qu’un athlète remporte une médaille ou une médaille d’or. L’ensemble est intégré dans une application Streamlit interactive composée de deux onglets : un premier dédié à l’analyse descriptive des JO 2024 (médailles, pays, sports, KPIs), et un second consacré aux prédictions 2028, incluant un classement des athlètes, des pays, un seuil ajustable de médaille et une comparaison entre les performances réelles de 2024 et les résultats prédits pour 2028. Ce projet offre ainsi un outil complet permettant d’explorer les dynamiques olympiques, d’anticiper les tendances futures et de visualiser les évolutions potentielles des nations et des athlètes.
+
+
 ## 👥 Équipe
 * Imane Guarraz  
 * Mathéo Morival  
