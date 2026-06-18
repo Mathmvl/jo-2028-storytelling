@@ -20,9 +20,8 @@ Ce projet offre ainsi un outil complet permettant d’explorer les dynamiques ol
 
 ## 📁 Ressources
 * Présentation : https://www.canva.com/design/DAHDcOvILLU/_Ahb1pjapacgmycTzt4osw/edit
-* Données :
-  Dataset principal : https://www.kaggle.com/datasets/stefanydeoliveira/summer-olympics-medals-1896-2024
-  Dataset Age : https://www.kaggle.com/datasets/mysarahmadbhat/120-years-of-olympic-history
+* Dataset principal : https://www.kaggle.com/datasets/stefanydeoliveira/summer-olympics-medals-1896-2024
+* Dataset Age : https://www.kaggle.com/datasets/mysarahmadbhat/120-years-of-olympic-history
 
 
 ---
