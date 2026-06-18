@@ -11,25 +11,6 @@ Dashboard Streamlit — Machine Learning — Data Science
 ## 📁 Ressources
 * Présentation : https://www.canva.com/design/DAHDcOvILLU/_Ahb1pjapacgmycTzt4osw/edit
 
-## ✅ To Do
-
-- [x] Définition du besoin (ce que l'on cherche à faire dans ce projet)
-- [x] Mise en place de l'orga (Share point, Repo git...)
-- [x] Choix des technos/outils(collaboration, langages,modèle de llm...)
-- [x] Diapo de présentation (mi parcours)
-- [x] Trouver les dataset les plus intéressants sur Kaggle
-- [x] Nettoyage, normalisation et structuration des données
-- [x] Analyse exploratoire (tendances & visualisation globale) - R
-- [x] Choix du modèle et Entraînement du LLM - Python
-- [x] Création du dashboard dynamique avec différentes visualisations
-- [x] Documentation complète du projet
-- [x] Diapo de présentation final
-
-
-## 🛠️ Installation
-1. Cloner ce dépôt : `git clone https://github.com/Mathmvl/jo-2028-storytelling.git`
-2. Créer un environnement virtuel et l'activer.
-3. Installer les dépendances : `pip install -r requirements.txt`
 
 ---
 
